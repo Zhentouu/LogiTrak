@@ -1,26 +1,26 @@
 INSERT INTO driver (
     FirstName,
     LastName,
-    PhoneNumber,
-    TelegramUserId
+    TelegramId,
+    ShiftStatus
 )
 VALUES
-    ('John', 'Smith', '07123456789', 6921978926),
-    ('Sarah', 'Jones', '07234567890', 6921978925),
-    ('Mike', 'Brown', '07345678901', 6921978924),
-    ('Daniel', 'Wilson', '07111222333', 6921978923),
-    ('Emily', 'Taylor', '07444555666', 6921978922),
-    ('James', 'Davies', '07555666777', 6921978921),
-    ('Sophie', 'Evans', '07666777888', 6921978920),
-    ('Jack', 'Thomas', '07777888999', 6921978919),
-    ('Olivia', 'Roberts', '07888999000', 6921978918),
-    ('Harry', 'Johnson', '07999000111', 6921978917),
-    ('Chloe', 'Walker', '07122334455', 6921978916),
-    ('Liam', 'Harris', '07233445566', 6921978915),
-    ('Amelia', 'Clark', '07344556677', 6921978914),
-    ('George', 'Lewis', '07455667788', 6921978913),
-    ('Mia', 'Hall', '07566778899', 6921978912),
-    ('Charlie', 'Allen', '07677889900', 6921978911);
+    ('John', 'Smith', 6921978926, 'OnShift'),
+    ('Sarah', 'Jones', 6921978925, 'OnShift'),
+    ('Mike', 'Brown', 6921978924, 'OffShift'),
+    ('Daniel', 'Wilson', 6921978923, 'OnShift'),
+    ('Emily', 'Taylor', 6921978922, 'OffShift'),
+    ('James', 'Davies', 6921978921, 'OnShift'),
+    ('Sophie', 'Evans', 6921978920, 'OnShift'),
+    ('Jack', 'Thomas', 6921978919, 'OffShift'),
+    ('Olivia', 'Roberts', 6921978918, 'OnShift'),
+    ('Harry', 'Johnson', 6921978917, 'OffShift'),
+    ('Chloe', 'Walker', 6921978916, 'OnShift'),
+    ('Liam', 'Harris', 6921978915, 'OnShift'),
+    ('Amelia', 'Clark', 6921978914, 'OffShift'),
+    ('George', 'Lewis', 6921978913, 'OnShift'),
+    ('Mia', 'Hall', 6921978912, 'OffShift'),
+    ('Charlie', 'Allen', 6921978911, 'OnShift');
 
 
     INSERT INTO employeeAccounts (
