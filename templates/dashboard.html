@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/templates/styles.css">
+    <title>Logitrack</title>
+</head>
+<body>
+    <header>
+        <h1>LogiTrak</h1>
+        <h2>Hi, {{user}}</h2>
+    </header>
+    <main>
+        <section>
+            <div id="usersgrid">
+                {% for user in liveUsersAmount %}
+                    <div id="dynamic-div-{{ loop.index }}" class="users">
+                        {% if user.NickName == None%}
+                            <h1>{{user.FirstName}}</h1>
+                        {% else %}
+                            <h1>{{user.NickName}}</h1>
+                        {% endif %}
+                        <h2>{{user.FirstName}} {{user.LastName}}</h2>
+                        <img src="https://thispersondoesnotexist.com/random-person.jpeg" alt="user pfp" width="120px">
+                        <a href="telegram"><button>Msg on Telegram</button></a>
+                        <p>{{user.DriverId}}</p>
+                        <p>{{user.ShiftStatus}}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+</body>
+</html>
