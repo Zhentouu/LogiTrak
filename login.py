@@ -1,0 +1,2 @@
+def loginstatus():
+    return True
