@@ -1,26 +1,27 @@
-INSERT INTO driver (
+INSERT INTO Driver (
+    NickName,
     FirstName,
     LastName,
     TelegramId,
     ShiftStatus
 )
 VALUES
-    ('John', 'Smith', 6921978926, 'OnShift'),
-    ('Sarah', 'Jones', 6921978925, 'OnShift'),
-    ('Mike', 'Brown', 6921978924, 'OffShift'),
-    ('Daniel', 'Wilson', 6921978923, 'OnShift'),
-    ('Emily', 'Taylor', 6921978922, 'OffShift'),
-    ('James', 'Davies', 6921978921, 'OnShift'),
-    ('Sophie', 'Evans', 6921978920, 'OnShift'),
-    ('Jack', 'Thomas', 6921978919, 'OffShift'),
-    ('Olivia', 'Roberts', 6921978918, 'OnShift'),
-    ('Harry', 'Johnson', 6921978917, 'OffShift'),
-    ('Chloe', 'Walker', 6921978916, 'OnShift'),
-    ('Liam', 'Harris', 6921978915, 'OnShift'),
-    ('Amelia', 'Clark', 6921978914, 'OffShift'),
-    ('George', 'Lewis', 6921978913, 'OnShift'),
-    ('Mia', 'Hall', 6921978912, 'OffShift'),
-    ('Charlie', 'Allen', 6921978911, 'OnShift');
+    (NULL, 'John', 'Smith', 6921978926, 'OnShift'),
+    ('Saz', 'Sarah', 'Jones', 6921978925, 'OnShift'),
+    (NULL, 'Mike', 'Brown', 6921978924, 'OffShift'),
+    ('Dan', 'Daniel', 'Wilson', 6921978923, 'OnShift'),
+    (NULL, 'Emily', 'Taylor', 6921978922, 'OffShift'),
+    ('JD', 'James', 'Davies', 6921978921, 'OnShift'),
+    (NULL, 'Sophie', 'Evans', 6921978920, 'OnShift'),
+    ('JT', 'Jack', 'Thomas', 6921978919, 'OffShift'),
+    (NULL, 'Olivia', 'Roberts', 6921978918, 'OnShift'),
+    ('Haz', 'Harry', 'Johnson', 6921978917, 'OffShift'),
+    (NULL, 'Chloe', 'Walker', 6921978916, 'OnShift'),
+    ('Lee', 'Liam', 'Harris', 6921978915, 'OnShift'),
+    (NULL, 'Amelia', 'Clark', 6921978914, 'OffShift'),
+    ('Geo', 'George', 'Lewis', 6921978913, 'OnShift'),
+    (NULL, 'Mia', 'Hall', 6921978912, 'OffShift'),
+    ('Charlie', 'Charlie', 'Allen', 6921978911, 'OnShift');
 
 
     INSERT INTO employeeAccounts (

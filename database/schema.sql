@@ -4,10 +4,12 @@ USE logitrakdb;
 
 CREATE TABLE Driver(
     DriverId INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    NickName VARCHAR(100) NULL,
     FirstName VARCHAR(25) NOT NULL,
     LastName VARCHAR(25) NOT NULL,
     TelegramId BIGINT NOT NULL UNIQUE,
-    ShiftStatus VARChAR(20) NOT NULL);
+    ShiftStatus VARCHAR(20) NOT NULL
+);
 
 CREATE TABLE Location(
     LocationId INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
