@@ -9,26 +9,32 @@
 <body>
     <header>
         <h1>LogiTrak</h1>
-        <h2>Hi, {{user}}</h2>
+        <h2>Hi, {{user}}</h2><hr>
     </header>
     <main>
         <section>
+            <!-- Users Grid -->
             <div id="usersgrid">
+                <!-- User Box - with all user details on Pulled from driver DB -->
                 {% for user in liveUsersAmount %}
                     <div id="dynamic-div-{{ loop.index }}" class="users">
-                        {% if user.NickName == None%}
+                        <img src="https://logitrakdb.khliere.com/logitrakpfp/{{user.DriverId}}{{user.FirstName}}{{user.LastName}}.png" alt="{{user.FirstName}} {{user.LastName}} pfp" width="120px">
+                        {% if user.NickName == None %}
                             <h1>{{user.FirstName}}</h1>
                         {% else %}
                             <h1>{{user.NickName}}</h1>
                         {% endif %}
+
                         <h2>{{user.FirstName}} {{user.LastName}}</h2>
-                        <img src="https://thispersondoesnotexist.com/random-person.jpeg" alt="user pfp" width="120px">
-                        <a href="telegram"><button>Msg on Telegram</button></a>
-                        <p>{{user.DriverId}}</p>
+                         
                         <p>{{user.ShiftStatus}}</p>
+                        <a href="telegram"><button>Msg on Telegram</button></a>
+                        
                     </div>
                 {% endfor %}
+
             </div>
+
         </section>
     </main>
 </body>

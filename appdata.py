@@ -1,12 +1,15 @@
 import mysql.connector
 import os
 from dotenv import load_dotenv
+import random
 
 load_dotenv()
 
+# getting the details for the use that is login in
 def user():
     return "Thomas"
 
+# pulls all the data from the driver database and ships them the static html (setup for local only)
 def liveUsersAmount():
     try:
 
@@ -35,4 +38,8 @@ def liveUsersAmount():
         return None
 
 
-liveUsersAmount()
+
+#
+def DriveTime():
+    value = "DriverTime"
+    return value
