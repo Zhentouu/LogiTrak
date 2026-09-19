@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/templates/styles.css">
+    <link rel="stylesheet" href="/static/styles.css">
     <title>Logitrack</title>
 </head>
 <body>
@@ -12,20 +12,26 @@
         <h2>Hi, {{user}}</h2><hr>
     </header>
     <main>
-        <section>
+        <section class="user-card">
+            <h1>Drivers</h1>
             <!-- Users Grid -->
             <div id="usersgrid">
                 <!-- User Box - with all user details on Pulled from driver DB -->
                 {% for user in liveUsersAmount %}
                     <div id="dynamic-div-{{ loop.index }}" class="users">
-                        <img src="https://logitrakdb.khliere.com/logitrakpfp/{{user.DriverId}}{{user.FirstName}}{{user.LastName}}.png" alt="{{user.FirstName}} {{user.LastName}} pfp" width="120px">
-                        {% if user.NickName == None %}
-                            <h1>{{user.FirstName}}</h1>
+
+                        <img src="https://logitrakdb.khliere.com/logitrakpfp/{{ user.DriverId }}{{ user.FirstName }}{{ user.LastName }}.png"
+                            onerror="this.onerror=null; this.src='https://logitrakdb.khliere.com/logitrakpfp/0Default.png';"
+                            alt="{{ user.Firstname }} {{ user.Lastname }} profile picture"
+                            width="120px">
+
+                        {% if user.Nickname == None %}
+                            <h1>{{user.Firstname}}</h1>
                         {% else %}
-                            <h1>{{user.NickName}}</h1>
+                            <h1>{{user.Nickname}}</h1>
                         {% endif %}
 
-                        <h2>{{user.FirstName}} {{user.LastName}}</h2>
+                        <h2>{{user.Firstname}} {{user.Lastname}}</h2>
                          
                         <p>{{user.ShiftStatus}}</p>
                         <a href="telegram"><button>Msg on Telegram</button></a>
