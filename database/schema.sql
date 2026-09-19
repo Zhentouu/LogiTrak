@@ -2,32 +2,59 @@ CREATE DATABASE IF NOT EXISTS logitrakdb;
 
 USE logitrakdb;
 
-CREATE TABLE Driver(
-    DriverId INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-    NickName VARCHAR(100) NULL,
-    FirstName VARCHAR(25) NOT NULL,
-    LastName VARCHAR(25) NOT NULL,
-    TelegramId BIGINT NOT NULL UNIQUE,
-    ShiftStatus VARCHAR(20) NOT NULL
-);
 
 CREATE TABLE Location(
     LocationId INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-    LocationAddress VARCHAR(255) NOT NULL,
-    LocationPostcode VARCHAR(10) NOT NULL,
-    VehicleRegistration VARCHAR(8) NOT NULL,
-    DeliveryStatus VARCHAR(20) NOT NULL);
+    AddressName VARCHAR(255) NOT NULL,
+    Postcode VARCHAR(10) NOT NULL,
+    City VARCHAR(50) NULL,
+    Country VARCHAR(50) NULL);
+
+CREATE TABLE Driver(
+    DriverId INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    Nickname VARCHAR(255) NULL,
+    Firstname VARCHAR(50) NOT NULL,
+    Lastname VARCHAR(50) NOT NULL,
+    LicenseType VARCHAR(25) NOT NULL,
+    ShiftStatus VARCHAR(25) NOT NULL,
+    TelegramId VARCHAR(25) NOT NULL);
 
 CREATE TABLE EmployeeAccounts(
     EmployeeId INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-    Email VARCHAR(50) NOT NULL,
+    Email VARCHAR(100) NOT NULL,
     PasswordHash VARCHAR(255) NOT NULL,
-    FirstName VARCHAR(25) NOT NULL,
-    LastName VARCHAR(25) NOT NULL,
-    JobRole VARCHAR(20) NOT NULL,
+    FirstName VARCHAR(50) NOT NULL,
+    LastName VARCHAR(50) NOT NULL,
+    JobRole VARCHAR(20) NULL,
     SystemRole VARCHAR(20) NOT NULL);
 
+CREATE TABLE Fleet(
+    VehicleId INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    Manufacturer VARCHAR(50) NULL,
+    Model VARCHAR(255) NULL,
+    Registration VARCHAR(25) NOT NULL,
+    VehicleType VARCHAR(25) NOT NULL);
 
-DESCRIBE Driver;
+
+CREATE TABLE Planner(
+    DeliveryId INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    DriverId INT NOT NULL,
+    VehicleId INT NOT NULL,
+    StartLocationId INT NOT NULL,
+    EndLocationId INT NOT NULL,
+    DeliveryDate DATETIME NOT NULL,
+    FOREIGN KEY (DriverId) REFERENCES Driver(DriverId)
+        ON DELETE RESTRICT ON UPDATE CASCADE,
+    FOREIGN KEY (VehicleId) REFERENCES Fleet(VehicleId)
+        ON DELETE RESTRICT ON UPDATE CASCADE,
+    FOREIGN KEY (StartLocationId) REFERENCES Location(LocationId)
+        ON DELETE RESTRICT ON UPDATE CASCADE,
+    FOREIGN KEY (EndLocationId) REFERENCES Location(LocationId)
+        ON DELETE RESTRICT ON UPDATE CASCADE);
+
+
 DESCRIBE Location;
+DESCRIBE DRIVER;
 DESCRIBE EmployeeAccounts;
+DESCRIBE Fleet;
+DESCRIBE Planner;
